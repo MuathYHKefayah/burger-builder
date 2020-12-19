@@ -1,11 +1,12 @@
 import React from "react";
 import classes from "./Modal.css";
-import Aux from "../../../hoc/Auxiliary";
+import Aux from "../../../hoc/Auxiliary/Auxiliary";
 import Backdrop from "../Backdrop/Backdrop";
+import PropTypes from "prop-types";
 
 const modal = (props) => (
   <Aux>
-    <Backdrop show={props.show} clicked={props.modalClosed}/>
+    <Backdrop show={props.show} clicked={props.modalClosed} />
     <div
       className={classes.Modal}
       style={{
@@ -17,5 +18,10 @@ const modal = (props) => (
     </div>
   </Aux>
 );
+
+modal.propTypes = {
+  show: PropTypes.bool,
+  modalClosed: PropTypes.func,
+};
 
 export default modal;

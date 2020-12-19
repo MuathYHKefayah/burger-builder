@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./BuildControls.css";
 import BuildControl from "./BuildControl/BuildControl";
+import PropTypes from "prop-types";
 
 const controls = [
   { label: "Salad", type: "salad" },
@@ -23,13 +24,23 @@ const buildControls = (props) => (
         disabled={props.disabled[ctrl.type]}
       />
     ))}
-    <button 
-        className={classes.OrderButton} 
-        disabled={!props.purchasable}
-        onClick={props.ordered}>
+    <button
+      className={classes.OrderButton}
+      disabled={!props.purchasable}
+      onClick={props.ordered}
+    >
       ORDER NOW
     </button>
   </div>
 );
+
+buildControls.propTypes = {
+  price: PropTypes.number,
+  ingredientAdded: PropTypes.func,
+  ingredientRemoved: PropTypes.func,
+  disabled: PropTypes.object,
+  purchasable: PropTypes.bool,
+  ordered: PropTypes.func,
+};
 
 export default buildControls;
