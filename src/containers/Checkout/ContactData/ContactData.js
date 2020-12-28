@@ -75,7 +75,7 @@ class ContactData extends Component {
         <select 
             name="deliveryMethod" 
             onChange={this.deliveryMethodChangeHandler}>
-            <option value="fastest" selected>Fastest</option>
+            <option value="fastest">Fastest</option>
             <option value="normal">Normal</option>
         </select>
         <Button btnType="Success" clicked={this.orderHandler}>
